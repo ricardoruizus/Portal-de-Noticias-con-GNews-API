@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Portal de Noticias</h1>
+    <!--La aplicación deberá tener como mínimo:
+        Encabezado.
+        Buscador.
+        Botón de búsqueda.
+        Área donde se mostrarán las noticias.
+        Mensaje de carga.
+        Mensaje cuando no existan resultados.
+        Manejo de errores.   -->
+
+        <header>
+            <h1>Portal de Noticias</h1>
+        </header>
+        <nav>
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Buscar noticias...">
+                <button type="submit">Buscar</button>
+            </form>
+        </nav>
+        <main>
+            <div id="loading-message" style="display: none;">Cargando noticias...</div>
+            <div id="error-message" style="display: none; color: red;">Ocurrió un error al cargar las noticias.</div>
+            <div id="no-results-message" style="display: none;">No se encontraron resultados.</div>
+            <div id="news-container"></div>
+        </main>
+        <script src="app.js"></script>
+
+    
+</body>
+</html>
