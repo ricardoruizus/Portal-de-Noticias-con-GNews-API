@@ -3,36 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portal de Noticias</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <h1>Portal de Noticias</h1>
-    <!--La aplicación deberá tener como mínimo:
-        Encabezado.
-        Buscador.
-        Botón de búsqueda.
-        Área donde se mostrarán las noticias.
-        Mensaje de carga.
-        Mensaje cuando no existan resultados.
-        Manejo de errores.   -->
-
-        <header>
-            <h1>Portal de Noticias</h1>
-        </header>
-        <nav>
+    <header>
+        <h1>Portal de Noticias</h1>
+        <section class="buscador-container">
             <form id="search-form">
-                <input type="text" id="search-input" placeholder="Buscar noticias...">
-                <button type="submit">Buscar</button>
+                <label for="search-input" class="visually-hidden">Buscar noticias</label>
+                <input 
+                    type="search" 
+                    id="search-input" 
+                    placeholder="Buscar noticias..." 
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" id="search-button">Buscar</button>
             </form>
-        </nav>
-        <main>
-            <div id="loading-message" style="display: none;">Cargando noticias...</div>
-            <div id="error-message" style="display: none; color: red;">Ocurrió un error al cargar las noticias.</div>
-            <div id="no-results-message" style="display: none;">No se encontraron resultados.</div>
-            <div id="news-container"></div>
-        </main>
-        <script src="app.js"></script>
+        </section>
+    </header>
 
-    
+    <main>
+        <!-- Mensajes de estado -->
+        <div id="cargando" class="mensaje mensaje-cargando" role="status" aria-live="polite">
+            Cargando noticias...
+        </div>
+        <div id="mensaje-error" class="mensaje mensaje-error" role="alert">
+            Ocurrió un error al cargar las noticias.
+        </div>
+        <div id="sin-resultados" class="mensaje mensaje-info">
+            No se encontraron resultados para tu búsqueda.
+        </div>
+
+        <!-- Contenedor donde se mostrarán las noticias -->
+        <section id="news-container" aria-label="Resultados de noticias">
+            <!-- Aquí se mostrarán las noticias dinámicamente -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Portal de Noticias - TSU DSM</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
